@@ -1,15 +1,15 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: pwa.audubon.app
+  name: pwa.realitynetwork.store
   namespace: default
 spec:
-  secretName: pwa.audubon.app
+  secretName: pwa.realitynetwork.store
   issuerRef:
     name: letsencrypt-prod-wild
     kind: ClusterIssuer
     group: cert-manager.io
-  commonName: "*.pwa.audubon.app"
+  commonName: "*.pwa.realitynetwork.store"
   dnsNames:
-    - ".pwa.audubon.app"
-    - "*.pwa.audubon.app"
+    - ".pwa.realitynetwork.store"
+    - "*.pwa.realitynetwork.store"

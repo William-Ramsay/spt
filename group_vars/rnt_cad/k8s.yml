@@ -1,6 +1,6 @@
 ---
-k8s_cluster_name: lx-cad
-k8s_cluster_url: lx-cad-cluster-control.audubon.app
+k8s_cluster_name: default
+k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
 k8s_taint_servers: true
 
 k8s_manifests:
@@ -29,11 +29,6 @@ k8s_manifests:
         secret_key: access-token
 
   # initiate wildcard cert
-  - name: pwa.audubon.app
+  - name: pwa.realitynetwork.store
     type: file
-    source: wildcard-pwa-audubon.yaml
-
-k8s_secrets:
-  - name: digitalocean-dns
-    type: file
-    source: secret-digitalocean-dns.yaml
+    source: wildcard-pwa-realitynetwork.yaml

@@ -6,16 +6,16 @@ nginx_proxy_send_timeout: 1200
 nginx_proxy_connection_timeout: 75
 
 nginx_sites:
-  - name: lx-console
-    url: lx-console.audubon.app
+  - name: rnt-console
+    url: rnt-console.realitynetwork.store
     upstream: http://localhost:8080
     template: basic-proxy
     ssl: true
 
-  - name: lx-daemon
-    url: lx-daemon.audubon.app
+  - name: rnt-daemon
+    url: rnt-daemon.realitynetwork.store
     upstream: http://localhost:9473
     configs:
-      - rewrite ^/deployer(/.*)? https://webapp-deployer.pwa.audubon.app permanent
+      - rewrite ^/deployer(/.*)? https://webapp-deployer.pwa.realitynetwork.store permanent
     template: websocket-proxy
     ssl: true
