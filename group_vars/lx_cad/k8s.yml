@@ -1,0 +1,39 @@
+---
+k8s_cluster_name: lx-cad
+k8s_cluster_url: lx-cad-cluster-control.audubon.app
+k8s_taint_servers: true
+
+k8s_manifests:
+  - name: cert-manager
+    url: https://github.com/cert-manager/cert-manager/releases/download/v1.14.5/cert-manager.yaml
+  
+  # issuer for basic http certs
+  - name: letsencrypt-prod
+    type: template
+    source: shared/clusterissuer-acme.yaml
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers: 
+      - type: http
+        ingress: nginx
+
+  # issuer for wildcard dns certs
+  - name: letsencrypt-prod-wild
+    type: template
+    source: shared/clusterissuer-acme.yaml
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers: 
+      - type: dns
+        provider: digitalocean
+        tokenref: tokenSecretRef
+        secret_name: digitalocean-dns
+        secret_key: access-token
+
+  # initiate wildcard cert
+  - name: pwa.audubon.app
+    type: file
+    source: wildcard-pwa-audubon.yaml
+
+k8s_secrets:
+  - name: digitalocean-dns
+    type: file
+    source: secret-digitalocean-dns.yaml

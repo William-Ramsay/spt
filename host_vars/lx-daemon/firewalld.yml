@@ -1,0 +1,17 @@
+---
+firewalld_add:
+  - name: public
+    interfaces:
+      - ens3
+    services:
+      - http
+      - https
+    ports:
+      - 22657/tcp
+      - 22656/tcp
+      - 1317/tcp
+
+  - name: trusted
+    sources:
+      - 23.111.78.179/32
+      - 23.111.78.182/32

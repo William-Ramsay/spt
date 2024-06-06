@@ -1,0 +1,11 @@
+[all]
+lx-daemon ansible_host=
+lx-cad-cluster-control ansible_host=
+lx-cad-cluster-worker ansible_host=
+
+[so]
+lx-daemon
+
+[lx_cad]
+lx-cad-cluster-control k8s_node_type=bootstrap
+lx-cad-cluster-worker k8s_node_type=agent k8s_pod_limit=1024 k8s_external_ip=
