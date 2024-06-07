@@ -3,9 +3,12 @@ k8s_cluster_name: default
 k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
 k8s_taint_servers: true
 
+k8s_acme_email: "{{ support_email }}"
+
 k8s_manifests:
   - name: cert-manager
-    url: https://github.com/cert-manager/cert-manager/releases/download/v1.14.5/cert-manager.yaml
+    type: url
+    source: https://github.com/cert-manager/cert-manager/releases/download/v1.15.0/cert-manager.yaml
   
   # issuer for basic http certs
   - name: letsencrypt-prod
