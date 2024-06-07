@@ -6,6 +6,8 @@ firewalld_add:
     services:
       - http
       - https
+    ports:
+      - 6443/tcp
 
   - name: trusted
     sources:
