@@ -1,14 +1,14 @@
 [all]
-rnt-daemon ansible_host=134.122.38.203
-rnt-cad-cluster-control ansible_host=159.203.61.139
-rnt-cad-cluster-worker ansible_host=138.197.165.217
+rnt-daemon ansible_host=142.93.110.163
+rnt-cad-cluster-control ansible_host=147.182.150.60
+rnt-cad-cluster-worker ansible_host=147.182.158.116
 
 [so]
 rnt-daemon
 
 [rnt_cad]
 rnt-cad-cluster-control k8s_node_type=bootstrap
-rnt-cad-cluster-worker k8s_node_type=agent k8s_pod_limit=1024 k8s_external_ip=138.197.165.217
+rnt-cad-cluster-worker k8s_node_type=agent k8s_pod_limit=1024 k8s_external_ip=147.182.158.116
 
 [k8s:children]
 rnt_cad
