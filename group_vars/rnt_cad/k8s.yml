@@ -1,6 +1,5 @@
 ---
-#k8s_cluster_name: default
-k8s_cluster_name: rnt-cad-cluster
+k8s_cluster_name: default
 k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
 k8s_taint_servers: true
 
@@ -39,7 +38,7 @@ k8s_manifests:
         provider: digitalocean
         tokenref: tokenSecretRef
         secret_name: digitalocean-dns
-        secret_key: access-token
+        secret_key: access-tok
 
   # initiate wildcard cert
   - name: pwa.realitynetwork.store
