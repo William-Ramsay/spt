@@ -1,11 +1,21 @@
 ---
-k8s_cluster_name: default
+#k8s_cluster_name: default
+k8s_cluster_name: rnt-cad-cluster
 k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
 k8s_taint_servers: true
 
 k8s_acme_email: "{{ support_email }}"
 
+k8s_disable: 
+  - traefik
+
 k8s_manifests:
+  # ingress controller, replaces traefik which is explicitly disabled
+  - name: ingress-nginx
+    type: url
+    source: https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml
+
+  # cert-manager, required for letsencrypt
   - name: cert-manager
     type: url
     source: https://github.com/cert-manager/cert-manager/releases/download/v1.15.0/cert-manager.yaml

@@ -11,5 +11,5 @@ spec:
     group: cert-manager.io
   commonName: "*.pwa.realitynetwork.store"
   dnsNames:
-    - ".pwa.realitynetwork.store"
+    - "pwa.realitynetwork.store"
     - "*.pwa.realitynetwork.store"
