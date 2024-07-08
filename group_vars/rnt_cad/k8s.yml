@@ -38,7 +38,7 @@ k8s_manifests:
         provider: digitalocean
         tokenref: tokenSecretRef
         secret_name: digitalocean-dns
-        secret_key: access-tok
+        secret_key: access-token
 
   # initiate wildcard cert
   - name: pwa.realitynetwork.store
