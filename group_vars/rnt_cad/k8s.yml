@@ -1,12 +1,21 @@
 ---
+# default context is used for stack orchestrator deployments, for testing a custom context name can be usefull
+#k8s_cluster_name: rnt-cad-cluster
 k8s_cluster_name: default
 k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
 k8s_taint_servers: true
 
 k8s_acme_email: "{{ support_email }}"
 
+# k3s bundles traefik as the default ingress controller, we will disable it and use nginx instead
 k8s_disable: 
   - traefik
+
+# secrets can be stored in a file or as a template, the template secrets gets dynamically base64 encoded while file based secrets must be encoded by hand
+k8s_secrets:
+  - name: digitalocean-dns
+    type: file
+    source: secret-digitalocean-dns.yaml
 
 k8s_manifests:
   # ingress controller, replaces traefik which is explicitly disabled
@@ -17,7 +26,7 @@ k8s_manifests:
   # cert-manager, required for letsencrypt
   - name: cert-manager
     type: url
-    source: https://github.com/cert-manager/cert-manager/releases/download/v1.15.0/cert-manager.yaml
+    source: https://github.com/cert-manager/cert-manager/releases/download/v1.15.1/cert-manager.yaml
   
   # issuer for basic http certs
   - name: letsencrypt-prod
