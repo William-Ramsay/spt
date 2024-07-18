@@ -2,7 +2,7 @@
 # default context is used for stack orchestrator deployments, for testing a custom context name can be usefull
 #k8s_cluster_name: rnt-cad-cluster
 k8s_cluster_name: default
-k8s_cluster_url: rnt-cad-cluster-control.realitynetwork.store
+k8s_cluster_url: rnt-cad-cluster-control.laconic.life
 k8s_taint_servers: true
 
 k8s_acme_email: "{{ support_email }}"
@@ -50,6 +50,6 @@ k8s_manifests:
         secret_key: access-token
 
   # initiate wildcard cert
-  - name: pwa.realitynetwork.store
+  - name: pwa.laconic.life
     type: file
     source: wildcard-pwa-laconic-life.yaml

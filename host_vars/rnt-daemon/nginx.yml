@@ -7,15 +7,15 @@ nginx_proxy_connection_timeout: 75
 
 nginx_sites:
   - name: rnt-console
-    url: rnt-console.realitynetwork.store
+    url: rnt-console.laconic.life
     upstream: http://localhost:8080
     template: basic-proxy
     ssl: true
 
   - name: rnt-daemon
-    url: rnt-daemon.realitynetwork.store
+    url: rnt-daemon.laconic.life
     upstream: http://localhost:9473
     configs:
-      - rewrite ^/deployer(/.*)? https://webapp-deployer.pwa.realitynetwork.store permanent
+      - rewrite ^/deployer(/.*)? https://webapp-deployer.pwa.laconic.life permanent
     template: websocket-proxy
     ssl: true

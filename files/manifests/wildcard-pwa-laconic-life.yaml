@@ -4,12 +4,12 @@ metadata:
   name: pwa.laconic.life
 namespace: default
 spec:
-  secretName: pwa.realitynetwork.store
+  secretName: pwa.laconic.life
   issuerRef:
     name: letsencrypt-prod-wild
     kind: ClusterIssuer
     group: cert-manager.io
-  commonName: "*.pwa.realitynetwork.store"
+  commonName: "*.pwa.laconic.life"
   dnsNames:
-    - "pwa.realitynetwork.store"
-    - "*.pwa.realitynetwork.store"
+    - "pwa.laconic.life"
+    - "*.pwa.laconic.life"
