@@ -52,4 +52,4 @@ k8s_manifests:
   # initiate wildcard cert
   - name: pwa.realitynetwork.store
     type: file
-    source: wildcard-pwa-realitynetwork.yaml
+    source: wildcard-pwa-laconic-life.yaml

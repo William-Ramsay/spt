@@ -1,8 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: pwa.realitynetwork.store
-  namespace: default
+  name: pwa.laconic.life
+namespace: default
 spec:
   secretName: pwa.realitynetwork.store
   issuerRef:
