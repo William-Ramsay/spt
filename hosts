@@ -1,14 +1,14 @@
 [all]
-will-daemon ansible_host=142.93.110.163
-will-cad-cluster-control ansible_host=147.182.150.60
-will-cad-cluster-worker ansible_host=147.182.158.116
+will-daemon ansible_host=165.22.238.155
+will-cad-cluster-control ansible_host=165.22.229.151
+will-cad-cluster-worker ansible_host=68.183.206.252
 
 [so]
 will-daemon
 
 [will_cad]
 will-cad-cluster-control k8s_node_type=bootstrap
-will-cad-cluster-worker k8s_node_type=agent k8s_pod_limit=1024 k8s_external_ip=147.182.158.116
+will-cad-cluster-worker k8s_node_type=agent k8s_pod_limit=1024 k8s_external_ip=68.183.206.252
 
 [k8s:children]
 will_cad
